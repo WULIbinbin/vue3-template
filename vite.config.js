@@ -4,6 +4,7 @@ import jsx from '@vitejs/plugin-vue-jsx'
 const { resolve } = require('path')
 // https://vitejs.dev/config/
 export default defineConfig({
+  base:'https://wulibinbin.github.io/vue3-jsx-study',
   plugins: [
     vue(),
     jsx(),
