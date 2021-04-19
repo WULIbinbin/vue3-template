@@ -1,0 +1,1 @@
+import{f as t,g as e,d as r,r as l}from"./vendor.3e742bbb.js";var a=t({setup(){const t=[{path:"/reactive",title:"响应式示例"},{path:"/router",title:"vue-router示例"}];return e((()=>{console.log(t)})),()=>r("div",null,[r("h2",null,["首页"]),r("div",null,[t.map((t=>r(l("router-link"),{to:t.path},{default:()=>[t.title]})))])])}});export default a;
