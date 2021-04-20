@@ -6,8 +6,6 @@ const routes = [
   { path: '/router', component: () => import( /* webpackChunkName: "page-index" */ '@/pages/router/index.jsx') }
 ]
 
-console.log(routes)
-
 const router = createRouter({
   history: createWebHistory(),
   scrollBehavior: () => ({ y: 0 }),

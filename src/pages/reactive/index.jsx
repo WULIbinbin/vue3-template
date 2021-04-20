@@ -25,7 +25,7 @@ export default defineComponent({
       readonlyData.input = event.target.value
     }
     onMounted(()=>{
-      console.log(this)
+
     })
     return () => (
       <div>
