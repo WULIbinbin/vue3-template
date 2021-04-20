@@ -1,4 +1,5 @@
 import { defineComponent, onMounted } from 'vue'
+import style from './style.module.scss'
 
 export default defineComponent({
   setup() {
@@ -8,15 +9,15 @@ export default defineComponent({
       { path: '/router', title: 'vue-router示例' },
     ]
     onMounted(() => {
-      console.log(navigate)
+
     })
     return () => (
       <div>
-        <h2>{title}</h2>
-        <div>
+        <h2 className={style.main_title}>{title}</h2>
+        <div className={style.navigate}>
           {
             navigate.map(item => (
-              <router-link to={item.path}>{item.title}</router-link>
+              <router-link className={style.navigate_item} to={item.path}>{item.title}</router-link>
             ))
           }
         </div>

@@ -1,4 +1,5 @@
 import { defineComponent, ref, reactive, readonly, onMounted } from 'vue'
+import style from './style.module.scss'
 
 export default defineComponent({
   props: {
@@ -28,7 +29,7 @@ export default defineComponent({
 
     })
     return () => (
-      <div>
+      <div className={style.bg}>
         <h2>{props.title}</h2>
         <div>
           <span>使用ref：</span>

@@ -1,0 +1,9 @@
+//@import url('@/assets/css/main.scss');
+.navigate{
+  display: flex;
+  flex-direction: column;
+  &_item{
+    width: 100%;
+    padding:12px;
+  }
+}
