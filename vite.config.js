@@ -4,7 +4,7 @@ import jsx from '@vitejs/plugin-vue-jsx'
 const { resolve } = require('path')
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:'/vue3-template',
+  //base: process.env.NODE_ENV === 'production' ? '/vue3-template' : '',
   plugins: [
     vue(),
     jsx(),
@@ -13,7 +13,7 @@ export default defineConfig({
     jsxFactory: 'h',
     jsxFragment: 'Fragment'
   },
-  resolve:{
+  resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
     }

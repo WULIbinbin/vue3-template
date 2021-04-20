@@ -1,2 +1,2 @@
 # vue3-jsx-study
-some examples of vue3 + jsx
+some template of vue3
