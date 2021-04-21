@@ -1,11 +1,11 @@
 import { defineComponent, ref, reactive, readonly, onMounted } from 'vue'
-import style from './style.module.scss'
+import './style.module.scss'
 
 export default defineComponent({
   props: {
     title: {
       type: String,
-      default: '我是标题'
+      default: '响应式示例'
     },
   },
   setup(props) {
@@ -25,16 +25,15 @@ export default defineComponent({
     const handleChangeReadonly = (event) => {
       readonlyData.input = event.target.value
     }
-    onMounted(()=>{
+    onMounted(() => {
 
     })
     return () => (
-      <div className={style.bg}>
-        <h2>{props.title}</h2>
-        <div>
-          <span>使用ref：</span>
+      <div>
+        <h2 className='main_title'>{props.title}</h2>
+        <form-item title='使用ref:'>
           <input type="text" onInput={handleChangeRef} />
-        </div>
+        </form-item>
         <p>已输入：{input.value}</p>
         <div>
           <span>使用reactive：</span>
