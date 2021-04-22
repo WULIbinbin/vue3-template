@@ -1,4 +1,5 @@
 import { defineComponent, ref, reactive, readonly, onMounted } from 'vue'
+import FormItem from '@/components/formItem/index'
 import './style.module.scss'
 
 export default defineComponent({
@@ -31,19 +32,17 @@ export default defineComponent({
     return () => (
       <div>
         <h2 className='main_title'>{props.title}</h2>
-        <form-item title='使用ref:'>
-          <input type="text" onInput={handleChangeRef} />
-        </form-item>
+        <FormItem title='使用ref:'>
+          <input slot='input1' type="text" onInput={handleChangeRef} />
+        </FormItem>
         <p>已输入：{input.value}</p>
-        <div>
-          <span>使用reactive：</span>
+        <FormItem title='使用reactive：'>
           <input type="text" onInput={handleChangeRec} />
-        </div>
+        </FormItem>
         <p>已输入：{state.input}</p>
-        <div>
-          <span>使用readonly：</span>
+        <FormItem title='使用readonly：'>
           <input type="text" onInput={handleChangeReadonly} />
-        </div>
+        </FormItem>
         <p>已输入：{readonlyData.input}</p>
       </div>
     )
