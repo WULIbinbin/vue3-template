@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import jsx from '@vitejs/plugin-vue-jsx'
+const postcss = require('./postcss.config.js').plugins
 const { resolve } = require('path')
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,6 +9,8 @@ export default defineConfig({
   plugins: [
     vue(),
     jsx(),
+    require('autoprefixer'),
+    //...postcss
   ],
   esbuild: {
     jsxFactory: 'h',
