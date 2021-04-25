@@ -2,10 +2,10 @@ import { createApp } from 'vue'
 import router from './router/index'
 import App from './App.jsx'
 
+import '@/assets/js/setRem.js'
 //全局组件注册
 import FormItem from '@/components/formItem/index.jsx'
 
-import '@/assets/js/setRem.js'
 
 const app = createApp(App)
 app.use(router)
