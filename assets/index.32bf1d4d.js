@@ -1,1 +1,0 @@
-import{d as t,o as a,b as e,r}from"./vendor.b13b2d65.js";var i=t({setup(){const t=[{path:"/reactive",title:"响应式示例"},{path:"/router",title:"vue-router示例"}];return a((()=>{})),()=>e("div",null,[e("h2",{className:"main-title"},["首页"]),e("div",{className:"navigate"},[t.map((t=>e(r("router-link"),{className:"navigate-item",to:t.path},{default:()=>[t.title]})))])])}});export default i;
