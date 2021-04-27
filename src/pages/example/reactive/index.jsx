@@ -1,5 +1,5 @@
 import { defineComponent, ref, reactive, readonly, onMounted } from 'vue'
-import FormItem from '@/components/formItem/index'
+import { FormItem } from '@/components/index'
 import './style.scss'
 
 export default defineComponent({
