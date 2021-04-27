@@ -1,7 +1,23 @@
-.form-input{
+.b-form-input{
   height: 50px;
-  font-size: 36px;
-  font-weight: 400;
-  color: #999999;
-  line-height: 50px;
+  width: 100%;
+  &>input{
+    height: 100%;
+    font-size: 36px;
+    font-weight: 400;
+    color: #999999;
+    line-height: 50px;
+    border-width: 0;
+    width: 100%;
+    &:focus{
+      border-width: 0;
+      outline: none;
+    }
+    &::-webkit-input-placeholder{
+      font-size: 36px;
+      font-weight: 400;
+      color: #999999;
+      line-height: 42px;
+    }
+  }
 }

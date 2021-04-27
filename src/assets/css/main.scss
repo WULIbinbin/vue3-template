@@ -1,8 +1,33 @@
+@import './var.scss';
+
 *{
   box-sizing: border-box;
   padding:0;
   margin:0;
 }
-.main-title{
+.b-main-title{
   padding:12px 32px;
+}
+@mixin line{
+  content:'';
+  position: absolute;
+  left:0;
+  right:0;
+  height: 1PX;
+  transform: scaleY(0.5);
+  background-color:$gray;
+}
+.b-bottom-line{
+  position: relative;
+  &::after{
+    @include line();
+    bottom:0;
+  }
+}
+.b-top-line{
+  position: relative;
+  &::after{
+    @include line();
+    top:0;
+  }
 }

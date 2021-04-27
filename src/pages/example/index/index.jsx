@@ -13,7 +13,7 @@ export default defineComponent({
     })
     return () => (
       <div>
-        <h2 className='main-title'>{title}</h2>
+        <h2 className='b-main-title'>{title}</h2>
         <div className='navigate'>
           {
             navigate.map(item => (
