@@ -5,7 +5,7 @@ const postcss = require('./postcss.config.js').plugins
 const { resolve } = require('path')
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/vue3-template' : '',
+  //base: process.env.NODE_ENV === 'production' ? '/vue3-template' : '',
   plugins: [
     vue(),
     jsx(),
