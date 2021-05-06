@@ -13,11 +13,11 @@ export default defineComponent({
     })
     return () => (
       <div>
-        <h2 className='b-main-title'>{title}</h2>
-        <div className='navigate'>
+        <h2 class='b-main-title'>{title}</h2>
+        <div class='navigate'>
           {
             navigate.map(item => (
-              <router-link className='navigate-item' to={item.path}>{item.title}</router-link>
+              <router-link class='navigate-item' to={item.path}>{item.title}</router-link>
             ))
           }
         </div>

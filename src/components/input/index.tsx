@@ -8,7 +8,7 @@ export default function (props, data) {
     ...props
   }
   return (
-    <div className='b-form-input'>
+    <div class='b-form-input'>
       <input {...defaultProps} />
     </div>
   )

@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "target": "esnext", //指定ECMAScript的目标版本:'ES3'(默认)，'ES5'， 'ES2015'， 'ES2016'， 'ES2017'， 'ES2018'， 'ES2019'， 'ES2020'，或'ESNEXT'。
     "module": "esnext", //指定模块代码生成:'none'， 'commonjs'， 'amd'， 'system'， 'umd'， 'es2015'， 'es2020'，或'ESNext'。
-    "strict": true, //是否启用所有严格的类型检查选项。
+    "strict": false, //是否启用所有严格的类型检查选项。
     "baseUrl": "./", //用于解析非绝对模块名称的基本目录。
     "paths": {
       "@/*": ["src/*"]

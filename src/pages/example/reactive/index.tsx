@@ -2,14 +2,10 @@ import { defineComponent, ref, reactive, readonly, onMounted } from 'vue'
 import { FormItem, Input } from '@/components/index'
 import './style.scss'
 
+interface Props {}
+
 export default defineComponent({
-  props: {
-    title: {
-      type: String,
-      default: '响应式示例'
-    },
-  },
-  setup(props) {
+  setup(props: Props) {
     const input = ref('')
     const handleChangeRef = (event) => {
       input.value = event.target.value
@@ -31,7 +27,7 @@ export default defineComponent({
     })
     return () => (
       <div>
-        <h2 className='b-main-title'>{props.title}</h2>
+        <h2 class='b-main-title'>响应式示例</h2>
         <FormItem title='使用ref：'>
           <Input onInput={handleChangeRef} />
         </FormItem>
@@ -42,10 +38,10 @@ export default defineComponent({
           <Input onInput={handleChangeReadonly} />
         </FormItem>
         <div>
-          <p className='reactive-msg'>结果</p>
-          <p className='reactive-msg'>使用ref：{input.value}</p>
-          <p className='reactive-msg'>使用reactive：{state.input}</p>
-          <p className='reactive-msg'>使用readonly：{readonlyData.input}</p>
+          <p class='reactive-msg'>结果</p>
+          <p class='reactive-msg'>使用ref：{input.value}</p>
+          <p class='reactive-msg'>使用reactive：{state.input}</p>
+          <p class='reactive-msg'>使用readonly：{readonlyData.input}</p>
         </div>
       </div>
     )

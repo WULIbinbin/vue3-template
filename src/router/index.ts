@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-const routes = [
+const routes:any[] = [
   { path: '/', redirect: '/index' },
   { path: '/index', component: () => import( /* webpackChunkName: "page-index" */ '@/pages/example/index/index') },
   { path: '/reactive', component: () => import( /* webpackChunkName: "page-index" */ '@/pages/example/reactive/index') },
