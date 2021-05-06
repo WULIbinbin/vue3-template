@@ -1,2 +1,2 @@
-# vue3-jsx-study
-jsx template of vue3
+# vue3-Tsx-study
+Tsx template of vue3
