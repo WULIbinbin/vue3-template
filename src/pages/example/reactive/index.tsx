@@ -8,6 +8,7 @@ export default defineComponent({
   setup(props: Props) {
     const input = ref('')
     const handleChangeRef = (event) => {
+      console.log(event)
       input.value = event.target.value
     }
     const state = reactive({

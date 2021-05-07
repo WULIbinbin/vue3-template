@@ -1,2 +1,2 @@
-export { default as Input } from './input'
-export { default as FormItem } from './formItem'
+export { default as Input } from './Input'
+export { default as FormItem } from './FormItem'

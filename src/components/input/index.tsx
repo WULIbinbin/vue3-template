@@ -8,8 +8,7 @@ type Props = {
   onInput?: (e: Event) => void
 }
 
-//使用typescript的话props用type和interface规范
-const Input1 = defineComponent({
+const Input = defineComponent({
   props: {
     placeholder: {
       type: String,
@@ -20,55 +19,21 @@ const Input1 = defineComponent({
       default: 'text'
     },
   },
-  emits: ['onInput'],
-  setup(props: Props) {
+  emits: ['on-input'],
+  setup(props:Props, ctx) {
+    const onInput = (e) => {
+      ctx.emit('on-input', e)
+    }
     return () => (
       <div class='b-form-input'>
-        <input {...props} />
-      </div>
-    )
-  }
-})
-console.log(Input1)
-
-const Input2 = defineComponent({
-  props: {
-    placeholder: {
-      type: String,
-      required: false,
-      default: '请输入'
-    },
-    type: {
-      type: String,
-      required: false,
-      default: 'text'
-    },
-  },
-  emits: {
-    onInput(payload, event) {
-      return event
-    }
-  },
-  setup(props) {
-    console.log(props, this)
-    const onInput = (e) => {
-      console.log(e)
-    }
-
-  },
-  methods: {
-    onChange(e) {
-      //console.log(e.target.value)
-      this.$emit('onInput', {}, e)
-    }
-  },
-  render() {
-    return (
-      <div class='b-form-input'>
-        <input onInput={this.onChange} />
+        <input
+          type={props.type}
+          placeholder={props.placeholder}
+          onInput={onInput}
+        />
       </div>
     )
   }
 })
 
-export default Input1
+export default Input
