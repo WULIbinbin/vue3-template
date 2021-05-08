@@ -2,10 +2,8 @@ import { defineComponent, ref, reactive, readonly, onMounted } from 'vue'
 import { FormItem, Input } from '@/components/index'
 import './style.scss'
 
-interface Props {}
-
 export default defineComponent({
-  setup(props: Props) {
+  setup() {
     const input = ref('')
     const handleChangeRef = (event) => {
       console.log(event)

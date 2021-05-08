@@ -1,12 +1,6 @@
-import { defineComponent, PropType } from '@vue/runtime-core'
+import { defineComponent } from '@vue/runtime-core'
 import './index.scss'
 
-
-type Props = {
-  placeholder?: string,
-  type?: string,
-  onInput?: (e: Event) => void
-}
 
 const Input = defineComponent({
   props: {
@@ -20,7 +14,7 @@ const Input = defineComponent({
     },
   },
   emits: ['on-input'],
-  setup(props:Props, ctx) {
+  setup(props, ctx) {
     const onInput = (e) => {
       ctx.emit('on-input', e)
     }
