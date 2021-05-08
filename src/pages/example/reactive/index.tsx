@@ -28,7 +28,10 @@ export default defineComponent({
       <div>
         <h2 class='b-main-title'>响应式示例</h2>
         <FormItem title='使用ref：'>
-          <Input type='password' onInput={handleChangeRef} />
+          <Input
+            type='password'
+            onInput={handleChangeRef}
+          />
         </FormItem>
         <FormItem title='使用reactive：'>
           <Input onInput={handleChangeRec} />
