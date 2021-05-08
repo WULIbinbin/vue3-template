@@ -1,8 +1,8 @@
-// declare module '*.tsx' { }
-// declare module '*.ts' { }
-// declare module '*.jsx'
-// declare module '*.vue' { }
-// declare module '*.js'
+declare module '*.tsx' { }
+declare module '*.ts' { }
+declare module '*.jsx'
+declare module '*.vue' { }
+declare module '*.js'
 declare module '*.json';
 declare module '*.svg'
 declare module '*.png'
