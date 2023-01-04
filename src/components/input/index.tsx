@@ -1,5 +1,5 @@
 import { defineComponent, PropType } from '@vue/runtime-core'
-import './index.scss'
+import './index.less'
 
 
 const Input = defineComponent({
@@ -13,7 +13,7 @@ const Input = defineComponent({
       default: 'text'
     },
     onInput: {
-      //使用PropType添加类型
+      // 使用PropType添加类型
       type: Function as PropType<(e: Event) => void>
     }
   },
