@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button-demo {
+  padding: 0 32px;
+}
+.button-demo,
+.margin-button {
+  .t-button {
+    margin-bottom: 32px;
+  }
+}
+.margin-right {
+  .t-button:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+.no-border-radius {
+  .t-button {
+    border-radius: 0;
+  }
+}
+.no-border {
+  .t-button {
+    border: 0;
+  }
+}
+.flex {
+  display: flex;
+}
+.align-center {
+  flex-direction: row;
+  align-items: center;
+}
+.align-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.title {
+  padding: 0 32px;
+  margin: 20px 0;
+  font-size: 32px;
+}

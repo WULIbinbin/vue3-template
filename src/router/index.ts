@@ -1,13 +1,10 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-const routes: any[] = [
-  { path: '/', redirect: '/index' },
-  { path: '/index', component: () => import( /* webpackChunkName: "page-index" */ '@/pages/example/index/index') },
-]
+import { createRouter, createWebHashHistory } from "vue-router";
+import routes from "./routes";
 
 const router = createRouter({
   history: createWebHashHistory(),
   scrollBehavior: () => ({ y: 0 }),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

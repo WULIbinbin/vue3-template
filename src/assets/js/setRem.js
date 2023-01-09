@@ -1,6 +1,6 @@
 // 设置 rem 函数
 function setRem() {
-  // 375 默认大小16px; 375px = 20rem ;每个元素px基础上/16
+  // 375 默认大小16px; 375px = 1rem ;每个元素px基础上/16
   let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
   //得到html的Dom元素
   let htmlDom = document.getElementsByTagName('html')[0];

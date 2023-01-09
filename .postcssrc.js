@@ -11,10 +11,12 @@ module.exports = {
       ],
       grid: true,
     },
-    'postcss-pxtorem': {
+    "postcss-pxtorem": {
       rootValue: 32,
-      propList: ['*'],
-      unitPrecision: 5
-    }
-  }
-}
+      // 除了border，其他单位px换rem
+      propList: ["*", "!border"],
+      unitPrecision: 5,
+      exclude: /node_modules/i
+    },
+  },
+};
