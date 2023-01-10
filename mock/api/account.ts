@@ -1,9 +1,11 @@
+import response from "../response";
+
 export default [
   {
     url: "/api/getAccount",
     method: "get",
     response: () => {
-      return {};
+      return response({}, 200, 0);
     },
   },
 ];
