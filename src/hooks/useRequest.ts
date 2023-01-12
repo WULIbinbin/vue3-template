@@ -1,14 +1,5 @@
-import { ref, reactive, watch, toRefs } from "vue";
-import { AxiosInstance } from "axios";
-import { IRequestResult, TService, IOptions } from "@/types/request";
-
-const setStateBind = (oldState: { [x: string]: any }) => {
-  return (newState: { [x: string]: any }) => {
-    Object.keys(newState).forEach((key) => {
-      oldState[key].value = newState[key];
-    });
-  };
-};
+import { reactive, watch, toRefs } from "vue";
+import { IRequestResult, TService, IOptions, ErrorData } from "@/types/request";
 
 const resolvedPromise = Promise.resolve(null);
 
@@ -16,7 +7,7 @@ const defaultQuerise = Symbol("default");
 
 export default function useRequest<T, P extends any[]>(
   service: TService<T, P>,
-  options: IOptions<T, P>
+  options: IOptions<T, P> = {}
 ) {
   const {
     manual = false,
@@ -37,47 +28,51 @@ export default function useRequest<T, P extends any[]>(
   });
 
   const run = async (...args: P) => {
-    const key = queryKey ? queryKey(...args) : defaultParams;
+    const key = queryKey ? queryKey(...args) : defaultQuerise;
+    console.log(key, args);
     if (!querise[key]) {
       querise[key] = {} as any;
     }
     if (!queryKey && repeatCancel) {
       querise[key].cancel();
     }
-    const {} = service(...args)
-    querise[key].loading = true
-    querise[key].cancel = canc
-    console.log(args);
-    return 
+    const { instance, cancel } = service(...args);
+    querise[key].loading = true;
+    querise[key].cancel = cancel as any;
+    instance
       .then((res) => {
         console.log(res);
-        return resolvedPromise;
+        querise[key].data = res;
+        querise[key].err = undefined;
+        // return resolvedPromise;
       })
-      .catch((error) => {
-        return resolvedPromise;
+      .catch((error: ErrorData) => {
+        querise[key].data = undefined;
+        querise[key].err = error;
+        // return resolvedPromise;
+      })
+      .finally(() => {
+        querise[key].loading = true;
       });
   };
 
-  run(options.params);
+  if (refreshDeps) {
+    watch(
+      refreshDeps,
+      () => {
+        run(...(refreshDepsParams?.value || ([] as unknown as P)));
+      },
+      { deep: true }
+    );
+  }
 
-  // watch(
-  //   latestQuery,
-  //   (queryData) => {
-  //     //
-  //   },
-  //   {
-  //     immediate: true,
-  //     deep: true,
-  //   }
-  // );
+  if (!manual) {
+    run(...defaultParams);
+  }
 
   return {
     run,
-    ...toRefs({
-      data,
-      params,
-      loading,
-      error,
-    }),
+    querise,
+    ...toRefs(querise[defaultQuerise]),
   };
 }
