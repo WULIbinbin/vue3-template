@@ -18,18 +18,28 @@
   </div>
 </template>
 <script setup lang="ts">
-import { readonly, ref } from "vue";
+import { readonly, ref, onMounted } from "vue";
 import { Icon } from "tdesign-icons-vue-next";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { navigateConfig } from "./config";
 
 const navigate = readonly(navigateConfig);
 const current = ref<string>("home");
 const router = useRouter();
+const route = useRoute();
 const tabChange = (target: string) => {
+  console.log(target)
   current.value = target;
   router.replace(navigateConfig.find((f) => f.name === target)?.path || "");
 };
+
+onMounted(() => {
+  const { matched } = route;
+  console.log(matched,);
+  const path = matched[1]?.path.slice(6)
+  current.value = path
+  console.log(current)
+});
 </script>
 <style lang="less" scoped>
 </style>
