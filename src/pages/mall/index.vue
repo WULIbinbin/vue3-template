@@ -28,17 +28,14 @@ const current = ref<string>("home");
 const router = useRouter();
 const route = useRoute();
 const tabChange = (target: string) => {
-  console.log(target)
   current.value = target;
   router.replace(navigateConfig.find((f) => f.name === target)?.path || "");
 };
 
 onMounted(() => {
   const { matched } = route;
-  console.log(matched,);
-  const path = matched[1]?.path.slice(6)
-  current.value = path
-  console.log(current)
+  const path = matched[1]?.path.slice(6);
+  current.value = path;
 });
 </script>
 <style lang="less" scoped>
