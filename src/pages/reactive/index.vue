@@ -21,6 +21,10 @@
 <script lang="ts" setup>
 import { ref, reactive, readonly, onMounted } from "vue";
 import { FormItem, Input } from "@/components/index";
+import { useStore } from "vuex";
+
+const store = useStore()
+console.log(store)
 
 const input = ref("");
 const handleChangeRef = (event) => {
